@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "hacks": "nodemon ./src/jokerman.js"
+    "start": "nodemon ./src/warhammer.js",
+    "create-shortcut": "powershell -ExecutionPolicy Bypass -Command \"$shortcutPath = Join-Path $env:USERPROFILE 'Desktop\\Warhammer Clicker.lnk'; $WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut($shortcutPath); $Shortcut.TargetPath = 'cmd.exe'; $Shortcut.Arguments = '/k cd /d \"' + $PWD.ToString() + '\" && run-warhammer.bat'; $Shortcut.WorkingDirectory = $PWD.ToString(); $Shortcut.Description = 'Run Warhammer Auto Clicker'; $Shortcut.HotKey = 'CTRL+ALT+W'; $Shortcut.Save(); Write-Host ('Shortcut created at: ' + $shortcutPath)\"",
+    "remove-shortcut": "powershell -ExecutionPolicy Bypass -Command \"$shortcutPath = Join-Path $env:USERPROFILE 'Desktop\\Warhammer Clicker.lnk'; Write-Host 'Looking for shortcut at: $shortcutPath'; if (Test-Path $shortcutPath) { Remove-Item $shortcutPath -Force; Write-Host 'Shortcut removed successfully' } else { Write-Host 'Shortcut not found at: $shortcutPath' }\""
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "fs": "0.0.1-security",
-    "node-key-sender": "^1.0.11",
     "node-wav-player": "^0.2.0",
+    "node-key-sender": "^1.0.11",
+    "node-global-key-listener": "^0.1.1",
     "nodemon": "^2.0.22"
   },
   "dependencies": {
