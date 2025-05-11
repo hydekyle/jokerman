@@ -1,0 +1,21 @@
+{
+  "name": "hacks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hacks": "nodemon ./src/jokerman.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "node-key-sender": "^1.0.11",
+    "node-wav-player": "^0.2.0",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "node-global-key-listener": "^0.3.0"
+  }
+}
