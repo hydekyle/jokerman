@@ -2,6 +2,10 @@
 
 A collection of automation tools built with Node.js, including an auto-clicker and other keyboard/mouse automation utilities.
 
+## Requirements
+
+Visual Studio 2022 and C++ for desktop installed
+
 ## Features
 
 ### Warhammer Auto Clicker
